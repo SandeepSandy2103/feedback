@@ -10,8 +10,8 @@ COPY . /app
 # Install Streamlit and any other required dependencies directly
 RUN pip install streamlit
 
-# Expose the port Streamlit will use (default 8501)
-EXPOSE 8501
+# Expose the port Streamlit will use
+EXPOSE 8080
 
 # Command to run your app
-CMD ["streamlit", "run", "app.py"]
+CMD ["streamlit", "run", "app.py", "--server.port=8080", "--server.enableCORS=false"]
